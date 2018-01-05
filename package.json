@@ -29,12 +29,13 @@
     "text-table": "^0.2.0",
     "transform-runtime": "^0.0.0",
     "uglify-to-browserify": "^2.0.0",
+    "uglifyify": "^4.0.5",
     "vue": "^2.5.13",
     "vueify": "^9.4.1"
   },
   "scripts": {
     "build": "browserify -t [ html2js-browserify  uglify-to-browserify  brfs ] start.js > build.js",
     "start": "yarn run build &&  live-server",
-    "build2": "browserify -t [ vueify  ] -e vuedemo/main.js -o build/app.js && live-server "
+    "build2": "browserify -t [ vueify , uglifyjs ] -e vuedemo/main.js -o build/app-tep.js  && node appbuild.js && live-server"
   }
 }
